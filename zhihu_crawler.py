@@ -1,5 +1,9 @@
 import datetime
 import requests
+import pytz
+import datetime
+tz = pytz.timezone('Asia/Shanghai')
+
 
 url = "https://www.zhihu.com/api/v3/feed/topstory/hot-lists/total?limit=50&desktop=true"
 headers = {
@@ -7,7 +11,7 @@ headers = {
 }
 
 
-now_time = datetime.datetime.now()
+now_time = datetime.datetime.now(tz)
 year = now_time.year
 month = now_time.month
 day = now_time.day
